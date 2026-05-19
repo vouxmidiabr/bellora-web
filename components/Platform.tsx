@@ -16,22 +16,34 @@ function IconHome() {
 }
 
 const gCardColors = {
-  gold:  { border: "rgba(154,97,8,.25)",   label: "#9A6108",  stroke: "#9A6108"  },
-  teal:  { border: "rgba(45,125,154,.25)", label: "#2D7D9A",  stroke: "#2D7D9A"  },
-  brown: { border: "rgba(139,69,19,.25)",  label: "#8B4513",  stroke: "#8B4513"  },
-  grn:   { border: "rgba(10,112,80,.25)",  label: "#0A7050",  stroke: "#0A7050"  },
+  gold:  { border: "rgba(200,134,10,.28)", label: "#C8860A", stroke: "#C8860A" },
+  teal:  { border: "rgba(45,125,154,.28)", label: "#2D7D9A", stroke: "#2D7D9A" },
+  brown: { border: "rgba(139,69,19,.28)",  label: "#8B4513", stroke: "#8B4513" },
+  grn:   { border: "rgba(74,120,86,.28)",  label: "#4A7856", stroke: "#4A7856" },
 };
 
 function GCard({ color, label, icon }: { color: keyof typeof gCardColors; label: string; icon: React.ReactNode }) {
   const c = gCardColors[color];
   return (
     <div
-      style={{ background: "#F2EFE9", borderRadius: 10, padding: "12px 10px", display: "flex", flexDirection: "column", alignItems: "center", gap: 5, border: `1px solid ${c.border}`, cursor: "pointer", transition: "opacity .2s", color: c.stroke }}
-      onMouseEnter={e => (e.currentTarget.style.opacity = "0.75")}
+      style={{
+        background: "#131110",
+        borderRadius: 10,
+        padding: "12px 10px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 5,
+        border: `1px solid ${c.border}`,
+        cursor: "pointer",
+        transition: "opacity .2s",
+        color: c.stroke,
+      }}
+      onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
       onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
     >
       {icon}
-      <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: 0.5, color: c.label, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{label}</span>
+      <span style={{ fontSize: 8.5, fontWeight: 600, letterSpacing: 0.5, color: c.label, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{label}</span>
     </div>
   );
 }
@@ -39,8 +51,8 @@ function GCard({ color, label, icon }: { color: keyof typeof gCardColors; label:
 function Dot({ type }: { type: "done" | "active" | "pend" }) {
   const base: React.CSSProperties = { width: 10, height: 10, borderRadius: "50%", flexShrink: 0 };
   if (type === "done")   return <div style={{ ...base, background: "#0A7050" }} />;
-  if (type === "active") return <div style={{ ...base, background: "#9A6108", animation: "pulse 2.2s ease-in-out infinite" }} />;
-  return <div style={{ ...base, background: "transparent", border: "1.5px solid #9C9590" }} />;
+  if (type === "active") return <div style={{ ...base, background: "#C8860A", animation: "pulse 2.2s ease-in-out infinite" }} />;
+  return <div style={{ ...base, background: "transparent", border: "1.5px solid rgba(255,255,255,.2)" }} />;
 }
 
 function GuestCard() {
@@ -54,9 +66,18 @@ function GuestCard() {
   ];
 
   return (
-    <div className="reveal" style={{ background: "#fff", borderRadius: 16, border: "1px solid rgba(28,26,23,0.08)", overflow: "hidden", boxShadow: "0 2px 8px rgba(28,26,23,.04), 0 8px 24px rgba(28,26,23,.06)" }}>
-      {/* Card header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 20px", borderBottom: "1px solid rgba(28,26,23,0.08)", background: "#FAF9F7" }}>
+    <div
+      className="reveal"
+      style={{
+        background: "#1D1B18",
+        borderRadius: 16,
+        border: "1px solid rgba(255,255,255,.08)",
+        overflow: "hidden",
+        boxShadow: "0 8px 32px rgba(0,0,0,.28), 0 2px 8px rgba(0,0,0,.18)",
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 20px", borderBottom: "1px solid rgba(255,255,255,.06)", background: "#131110" }}>
         <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#2D7D9A", flexShrink: 0 }} />
         <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1, textTransform: "uppercase", color: "#2D7D9A", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
           {t.platGuestTitle}
@@ -64,8 +85,9 @@ function GuestCard() {
       </div>
 
       <div style={{ padding: "20px 22px" }}>
-        <div style={{ fontSize: 10.5, fontWeight: 300, color: "#625D57", marginBottom: 14, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.gBc}</div>
+        <div style={{ fontSize: 10.5, fontWeight: 300, color: "#706C68", marginBottom: 14, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.gBc}</div>
 
+        {/* Category grid */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 7, marginBottom: 20 }}>
           <GCard color="gold"  label={t.gCatRS} icon={<IconUtensils />} />
           <GCard color="teal"  label={t.gCatHK} icon={<IconBed />} />
@@ -75,10 +97,10 @@ function GuestCard() {
 
         {/* Order tracker header */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-          <span style={{ color: "#9A6108", display: "flex", alignItems: "center" }}>
+          <span style={{ color: "#C8860A", display: "flex", alignItems: "center" }}>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
           </span>
-          <span style={{ fontSize: 10.5, fontWeight: 500, color: "#9A6108", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.otTitle}</span>
+          <span style={{ fontSize: 10.5, fontWeight: 500, color: "#C8860A", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.otTitle}</span>
         </div>
 
         {/* Steps */}
@@ -87,13 +109,18 @@ function GuestCard() {
             <div key={i} style={{ display: "grid", gridTemplateColumns: "20px 1fr", gap: 10, alignItems: "start", paddingBottom: i < steps.length - 1 ? 14 : 0 }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 2 }}>
                 <Dot type={step.type} />
-                {i < steps.length - 1 && <div style={{ width: 1, flex: 1, minHeight: 18, background: "rgba(28,26,23,0.08)", marginTop: 4 }} />}
+                {i < steps.length - 1 && <div style={{ width: 1, flex: 1, minHeight: 18, background: "rgba(255,255,255,.08)", marginTop: 4 }} />}
               </div>
               <div>
-                <div style={{ fontSize: 10.5, fontWeight: 500, color: step.type === "active" ? "#9A6108" : step.type === "pend" ? "#9C9590" : "#1C1A17", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
+                <div style={{
+                  fontSize: 10.5,
+                  fontWeight: 500,
+                  color: step.type === "active" ? "#C8860A" : step.type === "pend" ? "#706C68" : "#F2EDE5",
+                  fontFamily: "var(--font-dm), DM Sans, sans-serif",
+                }}>
                   {step.label}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 300, color: "#9C9590", marginTop: 2, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{step.time}</div>
+                <div style={{ fontSize: 9, fontWeight: 300, color: "#706C68", marginTop: 2, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{step.time}</div>
               </div>
             </div>
           ))}
@@ -110,17 +137,24 @@ function Ticket({ roomColor, roomLabel, item, badge, badgeBg, badgeColor, dept, 
   slaWidth: string; slaColor: string;
 }) {
   return (
-    <div style={{ background: "#FAF9F7", border: "1px solid rgba(28,26,23,0.08)", borderLeft: `3px solid ${roomColor}`, borderRadius: 10, padding: 12, marginBottom: 7 }}>
+    <div style={{
+      background: "#131110",
+      border: "1px solid rgba(255,255,255,.06)",
+      borderLeft: `3px solid ${roomColor}`,
+      borderRadius: 10,
+      padding: 12,
+      marginBottom: 7,
+    }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-        <span style={{ fontSize: 9.5, fontWeight: 600, color: "#9A6108", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{roomLabel}</span>
+        <span style={{ fontSize: 9.5, fontWeight: 600, color: "#C8860A", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{roomLabel}</span>
         <span style={{ fontSize: 8.5, fontWeight: 600, borderRadius: 20, padding: "2px 8px", background: badgeBg, color: badgeColor, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{badge}</span>
       </div>
-      <div style={{ fontSize: 12, fontWeight: 400, color: "#1C1A17", marginBottom: 6, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{item}</div>
+      <div style={{ fontSize: 12, fontWeight: 400, color: "#F2EDE5", marginBottom: 6, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{item}</div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 7 }}>
-        <span style={{ fontSize: 9, fontWeight: 300, color: "#9C9590", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{dept}</span>
+        <span style={{ fontSize: 9, fontWeight: 300, color: "#706C68", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{dept}</span>
         <span style={{ fontSize: 9, fontWeight: 600, color: timeColor, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{time}</span>
       </div>
-      <div style={{ height: 2, background: "#E9E5DE", borderRadius: 1 }}>
+      <div style={{ height: 2, background: "rgba(255,255,255,.08)", borderRadius: 1 }}>
         <div style={{ height: 2, width: slaWidth, background: slaColor, borderRadius: 1 }} />
       </div>
     </div>
@@ -131,10 +165,20 @@ function StaffCard() {
   const { t } = useLang();
 
   return (
-    <div className="reveal d1" style={{ background: "#fff", borderRadius: 16, border: "1px solid rgba(28,26,23,0.08)", overflow: "hidden", boxShadow: "0 2px 8px rgba(28,26,23,.04), 0 8px 24px rgba(28,26,23,.06)" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 20px", borderBottom: "1px solid rgba(28,26,23,0.08)", background: "#FAF9F7" }}>
-        <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#9A6108", flexShrink: 0 }} />
-        <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1, textTransform: "uppercase", color: "#9A6108", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
+    <div
+      className="reveal d1"
+      style={{
+        background: "#1D1B18",
+        borderRadius: 16,
+        border: "1px solid rgba(255,255,255,.08)",
+        overflow: "hidden",
+        boxShadow: "0 8px 32px rgba(0,0,0,.28), 0 2px 8px rgba(0,0,0,.18)",
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 20px", borderBottom: "1px solid rgba(255,255,255,.06)", background: "#131110" }}>
+        <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#C8860A", flexShrink: 0 }} />
+        <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: 1, textTransform: "uppercase", color: "#C8860A", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
           {t.platStaffTitle}
         </span>
       </div>
@@ -142,16 +186,16 @@ function StaffCard() {
       <div style={{ padding: "20px 22px" }}>
         {/* Status badges */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 14 }}>
-          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(249,115,22,.08)", border: "1px solid rgba(249,115,22,.18)", color: "#C25000", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge1}</span>
-          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(59,130,246,.08)", border: "1px solid rgba(59,130,246,.18)", color: "#2563EB", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge2}</span>
-          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(154,97,8,.08)", border: "1px solid rgba(154,97,8,.18)", color: "#9A6108", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge3}</span>
+          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(249,115,22,.12)", border: "1px solid rgba(249,115,22,.22)", color: "#F97316", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge1}</span>
+          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(59,130,246,.12)", border: "1px solid rgba(59,130,246,.22)", color: "#60A5FA", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge2}</span>
+          <span style={{ fontSize: 9.5, fontWeight: 400, borderRadius: 20, padding: "3px 10px", background: "rgba(200,134,10,.12)", border: "1px solid rgba(200,134,10,.22)", color: "#C8860A", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.badge3}</span>
         </div>
 
-        <Ticket roomColor="#D97706" roomLabel="Rm. 204" item={t.tk1Item} badge={t.tk1Badge} badgeBg="rgba(217,119,6,.1)" badgeColor="#D97706" dept={t.tk1Dept} time="8 min" timeColor="#D97706" slaWidth="68%" slaColor="#D97706" />
-        <Ticket roomColor="#F97316" roomLabel="Rm. 118" item={t.tk2Item} badge={t.tk2Badge} badgeBg="rgba(249,115,22,.1)" badgeColor="#C25000" dept={t.tk2Dept} time="2 min" timeColor="#0A7050" slaWidth="14%" slaColor="#0A7050" />
-        <Ticket roomColor="#3B82F6" roomLabel="Rm. 302" item={t.tk3Item} badge={t.tk3Badge} badgeBg="rgba(59,130,246,.1)" badgeColor="#2563EB" dept={t.tk3Dept} time="19 min" timeColor="#2563EB" slaWidth="54%" slaColor="#3B82F6" />
+        <Ticket roomColor="#D97706" roomLabel="Rm. 204" item={t.tk1Item} badge={t.tk1Badge} badgeBg="rgba(217,119,6,.15)" badgeColor="#D97706" dept={t.tk1Dept} time="8 min" timeColor="#D97706" slaWidth="68%" slaColor="#D97706" />
+        <Ticket roomColor="#F97316" roomLabel="Rm. 118" item={t.tk2Item} badge={t.tk2Badge} badgeBg="rgba(249,115,22,.15)" badgeColor="#F97316" dept={t.tk2Dept} time="2 min" timeColor="#4ADE80" slaWidth="14%" slaColor="#0A7050" />
+        <Ticket roomColor="#3B82F6" roomLabel="Rm. 302" item={t.tk3Item} badge={t.tk3Badge} badgeBg="rgba(59,130,246,.15)" badgeColor="#60A5FA" dept={t.tk3Dept} time="19 min" timeColor="#60A5FA" slaWidth="54%" slaColor="#3B82F6" />
 
-        <div style={{ textAlign: "center", fontSize: 9.5, fontWeight: 300, color: "#9C9590", marginTop: 10, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.platFooter}</div>
+        <div style={{ textAlign: "center", fontSize: 9.5, fontWeight: 300, color: "#706C68", marginTop: 10, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>{t.platFooter}</div>
       </div>
     </div>
   );
