@@ -185,7 +185,6 @@ export function Hero() {
                 fontSize: 12,
                 color: "#9A6108",
                 letterSpacing: 0.8,
-                whiteSpace: "nowrap",
                 boxShadow: "0 2px 12px rgba(154,97,8,.1)",
               }}
             >
@@ -195,12 +194,12 @@ export function Hero() {
 
             {/* Headline */}
             <h1
-              className="reveal d1"
+              className="reveal d1 hero-h1"
               style={{
                 fontFamily: "var(--font-manrope), Manrope, sans-serif",
                 fontWeight: 800,
                 fontSize: "clamp(30px, 8vw, 66px)",
-                lineHeight: 1.05,
+                lineHeight: 1.1,
                 letterSpacing: "-2.5px",
                 color: "#1C1A17",
                 maxWidth: 780,
@@ -211,7 +210,7 @@ export function Hero() {
 
             {/* Subtitle */}
             <p
-              className="reveal d2"
+              className="reveal d2 hero-sub"
               style={{
                 fontSize: 17,
                 fontWeight: 300,
@@ -254,7 +253,7 @@ export function Hero() {
 
           {/* Right column — phone + KPI */}
           <div className="reveal d2 hero-right-col" style={{ display: "flex", alignItems: "flex-start", position: "relative", justifyContent: "flex-start" }}>
-            <div style={{ position: "relative", width: 460, flexShrink: 0 }}>
+            <div className="hero-phone-wrap" style={{ position: "relative", width: 460, flexShrink: 0 }}>
               <PhoneMockup />
               <KPICard />
             </div>
@@ -277,8 +276,11 @@ export function Hero() {
           .kpi-card-float { display: none !important; }
         }
         @media (max-width: 640px) {
-          .hero-right-col { display: flex; justify-content: center !important; }
+          .hero-right-col { display: flex; justify-content: center !important; overflow: hidden; }
+          .hero-phone-wrap { width: 100% !important; display: flex; justify-content: center; }
           .hero-btns { flex-wrap: wrap; }
+          .hero-sub { font-size: 15px !important; max-width: 100% !important; }
+          .hero-h1 { letter-spacing: -1px !important; }
         }
       `}</style>
     </section>

@@ -36,8 +36,8 @@ export function CTA() {
           style={{
             fontFamily: "var(--font-manrope), Manrope, sans-serif",
             fontWeight: 800,
-            fontSize: "clamp(36px, 5vw, 66px)",
-            letterSpacing: "-2.5px",
+            fontSize: "clamp(28px, 7vw, 66px)",
+            letterSpacing: "-1.5px",
             color: "#F2EDE5",
             lineHeight: 1.0,
             marginBottom: 24,
