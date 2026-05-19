@@ -38,6 +38,7 @@ export function DemoModal() {
   const { t } = useLang();
   const [form, setForm] = useState<FormState>({ name: "", hotel: "", email: "", phone: "", rooms: "" });
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -61,8 +62,6 @@ export function DemoModal() {
 
   const set = (key: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(prev => ({ ...prev, [key]: e.target.value }));
-
-  const [errorMsg, setErrorMsg] = useState("");
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
