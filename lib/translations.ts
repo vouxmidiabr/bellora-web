@@ -53,15 +53,13 @@ export interface Translations {
   priceLabel: string;
   priceHead: string;
   priceSub: string;
-  starterPeriod: string; starterRooms: string;
-  starterF1: string; starterF2: string; starterF3: string; starterF4: string; starterF5: string;
-  starterBtn: string;
-  proPeriod: string; proRooms: string;
-  proF1: string; proF2: string; proF3: string; proF4: string; proF5: string;
-  proBtn: string;
-  entRooms: string;
-  entF1: string; entF2: string; entF3: string; entF4: string; entF5: string;
-  entBtn: string;
+  priceFrom: string;
+  priceMo: string;
+  priceAdapted: string;
+  priceF1: string; priceF2: string; priceF3: string; priceF4: string;
+  priceCtaQ: string;
+  priceCtaDesc: string;
+  priceDemoBtn: string;
   ctaH: string;
   ctaSub: string;
   ctaBtn: string;
@@ -108,16 +106,13 @@ export const translations: Record<Language, Translations> = {
     how1Title: "We configure your hotel", how1Body: "Rooms, staff accounts, departments, and services, all set up by our team. You start receiving orders the same day.",
     how2Title: "Guests connect via QR", how2Body: "Place QR codes in each room. Guests scan and request instantly: no app download, no registration, nothing to install.",
     how3Title: "Your team manages live", how3Body: "Staff get instant alerts. Managers track SLAs, ratings, and KPIs in real time, with data to continuously improve.",
-    priceLabel: "Pricing", priceHead: "Simple, transparent pricing.", priceSub: "All plans include full setup, training, and support. No hidden fees, no surprises.",
-    starterPeriod: "per month · billed annually", starterRooms: "Up to 30 rooms",
-    starterF1: "Guest request portal", starterF2: "Real-time staff dashboard", starterF3: "3-language support", starterF4: "QR code setup included", starterF5: "Email support",
-    starterBtn: "Get started",
-    proPeriod: "per month · billed annually", proRooms: "Up to 100 rooms",
-    proF1: "Everything in Starter", proF2: "Analytics & KPI dashboard", proF3: "TV mode for departments", proF4: "SLA tracking & alerts", proF5: "Priority support",
-    proBtn: "Request Demo",
-    entRooms: "100+ rooms · multi-property",
-    entF1: "Everything in Pro", entF2: "Multi-property management", entF3: "Custom integrations", entF4: "Dedicated account manager", entF5: "SLA guarantee",
-    entBtn: "Contact Sales",
+    priceLabel: "Pricing", priceHead: "Simple and transparent.", priceSub: "One plan, fully adapted to your hotel. No hidden fees.",
+    priceFrom: "From", priceMo: "€199/mo",
+    priceAdapted: "Tailored to your hotel's size · Enterprise pricing available",
+    priceF1: "Free setup", priceF2: "First month free", priceF3: "No lock-in contract", priceF4: "Up and running in an afternoon",
+    priceCtaQ: "Want to know the exact price for your hotel?",
+    priceCtaDesc: "Book a 30-minute demo. We'll show you Bellora live and send you a personalised proposal the same day.",
+    priceDemoBtn: "Book a demo",
     ctaH: "Ready to transform your<br><span class=\"grad-text\">guest experience?</span>",
     ctaSub: "Book a 30-minute demo. We'll show you Bellora live and configure it for your hotel, on the same day.",
     ctaBtn: "Book Your Demo →", ctaFn: "No commitment required · Free setup included",
@@ -159,16 +154,13 @@ export const translations: Record<Language, Translations> = {
     how1Title: "Configuramos o seu hotel", how1Body: "Quartos, contas de staff, departamentos e serviços, tudo configurado pela nossa equipa. Começa a receber pedidos no mesmo dia.",
     how2Title: "Os hóspedes ligam-se via QR", how2Body: "Coloque QR codes em cada quarto. Os hóspedes acedem e pedem instantaneamente: sem download de app, sem registo, nada para instalar.",
     how3Title: "A equipa gere em tempo real", how3Body: "O staff recebe alertas instantâneos. Os gestores acompanham SLAs, avaliações e KPIs em tempo real, com dados para melhorar continuamente.",
-    priceLabel: "Preços", priceHead: "Preços simples e transparentes.", priceSub: "Todos os planos incluem configuração completa, formação e suporte. Sem taxas ocultas, sem surpresas.",
-    starterPeriod: "por mês · faturado anualmente", starterRooms: "Até 30 quartos",
-    starterF1: "Portal de pedidos do hóspede", starterF2: "Dashboard da equipa em tempo real", starterF3: "Suporte em 3 idiomas", starterF4: "Configuração QR code incluída", starterF5: "Suporte por email",
-    starterBtn: "Começar",
-    proPeriod: "por mês · faturado anualmente", proRooms: "Até 100 quartos",
-    proF1: "Tudo no Starter", proF2: "Analytics e dashboard KPI", proF3: "Modo TV para departamentos", proF4: "Rastreamento SLA e alertas", proF5: "Suporte prioritário",
-    proBtn: "Pedir Demo",
-    entRooms: "100+ quartos · multi-propriedade",
-    entF1: "Tudo no Pro", entF2: "Gestão multi-propriedade", entF3: "Integrações personalizadas", entF4: "Gestor de conta dedicado", entF5: "Garantia SLA",
-    entBtn: "Contactar Vendas",
+    priceLabel: "Preços", priceHead: "Simples e sem surpresas.", priceSub: "Um plano, adaptado ao seu hotel. Sem taxas ocultas.",
+    priceFrom: "A partir de", priceMo: "€199/mês",
+    priceAdapted: "Adaptado ao tamanho do seu hotel · Preços enterprise disponíveis",
+    priceF1: "Configuração gratuita", priceF2: "Primeiro mês gratuito", priceF3: "Sem contrato de permanência", priceF4: "Activo numa tarde",
+    priceCtaQ: "Quer saber o preço exacto para o seu hotel?",
+    priceCtaDesc: "Marque uma demo de 30 minutos. Mostramos a Bellora ao vivo e enviamos uma proposta personalizada no mesmo dia.",
+    priceDemoBtn: "Marcar uma demo",
     ctaH: "Pronto para transformar a<br><span class=\"grad-text\">experiência do hóspede?</span>",
     ctaSub: "Marque uma demo de 30 minutos. Mostramos o Bellora ao vivo e configuramos tudo para o seu hotel, no mesmo dia.",
     ctaBtn: "Marcar a Sua Demo →", ctaFn: "Sem compromisso · Configuração gratuita incluída",
@@ -210,16 +202,13 @@ export const translations: Record<Language, Translations> = {
     how1Title: "Configuramos su hotel", how1Body: "Habitaciones, cuentas de personal, departamentos y servicios, todo configurado por nuestro equipo. Empieza a recibir pedidos el mismo día.",
     how2Title: "Los huéspedes se conectan via QR", how2Body: "Coloque códigos QR en cada habitación. Los huéspedes escanean y solicitan instantáneamente: sin descargar app, sin registro, nada que instalar.",
     how3Title: "Su equipo gestiona en directo", how3Body: "El personal recibe alertas instantáneas. Los gestores siguen SLAs, valoraciones y KPIs en tiempo real, con datos para mejorar continuamente.",
-    priceLabel: "Precios", priceHead: "Precios simples y transparentes.", priceSub: "Todos los planes incluyen configuración completa, formación y soporte. Sin tarifas ocultas, sin sorpresas.",
-    starterPeriod: "por mes · facturado anualmente", starterRooms: "Hasta 30 habitaciones",
-    starterF1: "Portal de solicitudes del huésped", starterF2: "Panel del personal en tiempo real", starterF3: "Soporte en 3 idiomas", starterF4: "Configuración QR incluida", starterF5: "Soporte por email",
-    starterBtn: "Empezar",
-    proPeriod: "por mes · facturado anualmente", proRooms: "Hasta 100 habitaciones",
-    proF1: "Todo en Starter", proF2: "Analytics y panel KPI", proF3: "Modo TV para departamentos", proF4: "Seguimiento SLA y alertas", proF5: "Soporte prioritario",
-    proBtn: "Solicitar Demo",
-    entRooms: "100+ habitaciones · multi-propiedad",
-    entF1: "Todo en Pro", entF2: "Gestión multi-propiedad", entF3: "Integraciones personalizadas", entF4: "Gestor de cuenta dedicado", entF5: "Garantía SLA",
-    entBtn: "Contactar Ventas",
+    priceLabel: "Precios", priceHead: "Simple y sin sorpresas.", priceSub: "Un plan, adaptado a su hotel. Sin tarifas ocultas.",
+    priceFrom: "Desde", priceMo: "€199/mes",
+    priceAdapted: "Adaptado al tamaño de su hotel · Precios enterprise disponibles",
+    priceF1: "Configuración gratuita", priceF2: "Primer mes gratis", priceF3: "Sin contrato de permanencia", priceF4: "Activo en una tarde",
+    priceCtaQ: "¿Quiere saber el precio exacto para su hotel?",
+    priceCtaDesc: "Reserve una demo de 30 minutos. Le mostramos Bellora en directo y le enviamos una propuesta personalizada el mismo día.",
+    priceDemoBtn: "Reservar una demo",
     ctaH: "¿Listo para transformar la<br><span class=\"grad-text\">experiencia del huésped?</span>",
     ctaSub: "Reserve una demo de 30 minutos. Le mostramos Bellora en directo y lo configuramos para su hotel, el mismo día.",
     ctaBtn: "Reservar Su Demo →", ctaFn: "Sin compromiso · Configuración gratuita incluida",
