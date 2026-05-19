@@ -164,7 +164,7 @@ export function Hero() {
       {/* Glow */}
       <div className="hero-glow" />
 
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px", position: "relative", zIndex: 1, width: "100%" }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1, width: "100%" }}>
         <div className="hero-inner-grid">
           {/* Left column */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
@@ -199,7 +199,7 @@ export function Hero() {
               style={{
                 fontFamily: "var(--font-manrope), Manrope, sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(44px, 5vw, 66px)",
+                fontSize: "clamp(30px, 8vw, 66px)",
                 lineHeight: 1.05,
                 letterSpacing: "-2.5px",
                 color: "#1C1A17",
@@ -226,7 +226,7 @@ export function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="reveal d3" style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 48 }}>
+            <div className="reveal d3 hero-btns" style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 48 }}>
               <a href="#cta" style={primaryBtnStyle}
                 onMouseEnter={e => { const el = e.currentTarget; el.style.background = "#B8760A"; el.style.transform = "translateY(-2px)"; el.style.boxShadow = "0 8px 24px rgba(154,97,8,.22)"; }}
                 onMouseLeave={e => { const el = e.currentTarget; el.style.background = "#9A6108"; el.style.transform = "none"; el.style.boxShadow = "none"; }}
@@ -272,12 +272,13 @@ export function Hero() {
         }
         .kpi-card-float { display: block; }
         @media (max-width: 980px) {
-          .hero-inner-grid {
-            grid-template-columns: 1fr;
-            gap: 50px;
-          }
+          .hero-inner-grid { grid-template-columns: 1fr; gap: 50px; }
           .hero-right-col { order: -1; justify-content: center !important; }
           .kpi-card-float { display: none !important; }
+        }
+        @media (max-width: 640px) {
+          .hero-right-col { display: flex; justify-content: center !important; }
+          .hero-btns { flex-wrap: wrap; }
         }
       `}</style>
     </section>

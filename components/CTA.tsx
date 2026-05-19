@@ -19,7 +19,7 @@ export function CTA() {
       }}
     >
       <div className="cta-glow" />
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px", position: "relative", zIndex: 1 }}>
+      <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         {/* Vertical decorative line */}
         <div
           className="reveal"

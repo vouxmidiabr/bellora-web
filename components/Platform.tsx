@@ -206,7 +206,7 @@ export function Platform() {
 
   return (
     <section id="platform" style={{ background: "#F2EFE9", padding: "120px 0" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px" }}>
+      <div className="wrap">
         <div style={{ marginBottom: 64 }}>
           <div className="reveal" style={{ fontSize: 10, fontWeight: 500, letterSpacing: 3.5, textTransform: "uppercase", color: "#9A6108", marginBottom: 14, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
             {t.platLabel}

@@ -15,7 +15,7 @@ export function Pricing() {
 
   return (
     <section id="pricing" style={{ padding: "120px 0", background: "#F2EFE9" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px" }}>
+      <div className="wrap">
 
         {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -45,7 +45,7 @@ export function Pricing() {
             }}
           >
             {/* Left: price + features */}
-            <div style={{ padding: "44px 48px" }}>
+            <div className="price-left" style={{ padding: "44px 48px" }}>
               <div style={{ fontSize: 11, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase", color: "#9A6108", marginBottom: 10, fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
                 {t.priceFrom}
               </div>
@@ -76,7 +76,7 @@ export function Pricing() {
             <div style={{ background: "rgba(154,97,8,.12)" }} />
 
             {/* Right: CTA */}
-            <div style={{ padding: "44px 48px", background: "rgba(154,97,8,.025)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div className="price-right" style={{ padding: "44px 48px", background: "rgba(154,97,8,.025)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ fontFamily: "var(--font-manrope), Manrope, sans-serif", fontWeight: 700, fontSize: 22, color: "#1C1A17", lineHeight: 1.25, letterSpacing: -0.5, marginBottom: 16 }}>
                 {t.priceCtaQ}
               </div>
@@ -121,13 +121,11 @@ export function Pricing() {
 
       <style>{`
         @media (max-width: 760px) {
-          .price-card-single {
-            grid-template-columns: 1fr !important;
-          }
-          .price-card-single > div:nth-child(2) {
-            height: 1px !important;
-            width: 100% !important;
-          }
+          .price-card-single { grid-template-columns: 1fr !important; }
+          .price-card-single > div:nth-child(2) { height: 1px !important; width: 100% !important; }
+        }
+        @media (max-width: 640px) {
+          .price-left, .price-right { padding: 28px 24px !important; }
         }
       `}</style>
     </section>

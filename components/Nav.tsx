@@ -45,7 +45,7 @@ export function Nav() {
         transition: "padding 0.3s ease, box-shadow 0.3s ease",
       }}
     >
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 28 }}>
+      <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
         {/* Logo */}
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", flexShrink: 0 }}>
           <BellLogo />
@@ -77,7 +77,7 @@ export function Nav() {
 
         {/* Right: lang + CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <div className="nav-lang" style={{ display: "flex", alignItems: "center", gap: 6 }}>
             {(["EN", "PT", "ES"] as Language[]).map((l, i) => (
               <span key={l} style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 {i > 0 && <span style={{ color: "#9C9590", fontSize: 11 }}>·</span>}
@@ -129,6 +129,9 @@ export function Nav() {
       <style>{`
         @media (max-width: 980px) {
           .nav-links-list { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .nav-lang { display: none !important; }
         }
       `}</style>
     </nav>

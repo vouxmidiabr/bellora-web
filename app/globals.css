@@ -126,6 +126,21 @@ body::after {
     radial-gradient(ellipse 400px 300px at 70% 30%, rgba(10,112,80,.05), transparent 65%);
 }
 
+/* ── Responsive wrapper ── */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 44px;
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+  #features, #platform, #how, #pricing { padding: 70px 0 !important; }
+  #hero    { padding: 100px 0 60px !important; }
+  #cta     { padding: 80px 0 !important; }
+  #footer  { padding: 40px 0 !important; }
+}
+
 /* ── How it works connecting line ── */
 .how-line {
   position: absolute;

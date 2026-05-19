@@ -32,7 +32,7 @@ export function Footer() {
 
   return (
     <footer id="footer" style={{ background: "#1D1B18", borderTop: "1px solid rgba(255,255,255,.06)", padding: "52px 0" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 44px" }}>
+      <div className="wrap">
         {/* Top grid */}
         <div className="foot-top-resp" style={{ paddingBottom: 44, borderBottom: "1px solid rgba(255,255,255,.06)" }}>
           {/* Left: logo + desc */}
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 20 }}>
+        <div className="foot-bottom" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 20 }}>
           <span style={{ fontSize: 11.5, fontWeight: 300, color: "#5C5852", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
             {t.footCopy}
           </span>
@@ -133,6 +133,10 @@ export function Footer() {
           .foot-links-resp { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
+          .foot-links-resp { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+          .foot-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
           .foot-links-resp { grid-template-columns: 1fr; }
         }
       `}</style>
