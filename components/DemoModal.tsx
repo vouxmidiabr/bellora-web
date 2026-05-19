@@ -62,26 +62,35 @@ export function DemoModal() {
   const set = (key: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(prev => ({ ...prev, [key]: e.target.value }));
 
+  const [errorMsg, setErrorMsg] = useState("");
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMsg("");
     try {
+      const fd = new FormData();
+      fd.append("access_key", ACCESS_KEY);
+      fd.append("subject", `Nova demo Bellora — ${form.hotel}`);
+      fd.append("name", form.name);
+      fd.append("email", form.email);
+      fd.append("hotel_name", form.hotel);
+      fd.append("phone", form.phone || "—");
+      fd.append("rooms", form.rooms || "—");
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: `Nova demo Bellora — ${form.hotel}`,
-          name: form.name,
-          hotel: form.hotel,
-          email: form.email,
-          phone: form.phone || "—",
-          rooms: form.rooms || "—",
-        }),
+        body: fd,
       });
       const data = await res.json();
-      setStatus(data.success ? "success" : "error");
-    } catch {
+      if (data.success) {
+        setStatus("success");
+      } else {
+        console.error("Web3Forms error:", data);
+        setErrorMsg(data.message || "");
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
       setStatus("error");
     }
   };
@@ -239,7 +248,7 @@ export function DemoModal() {
 
                 {status === "error" && (
                   <p style={{ fontSize: 12, color: "#DC2626", textAlign: "center", fontFamily: "var(--font-dm), DM Sans, sans-serif", margin: 0 }}>
-                    {t.demoError}
+                    {errorMsg || t.demoError}
                   </p>
                 )}
               </form>
