@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg:     #FAF9F7;
+  --color-bg2:    #F2EFE9;
+  --color-bg3:    #E9E5DE;
+  --color-dk:     #131110;
+  --color-dk2:    #1D1B18;
+  --color-gold:   #9A6108;
+  --color-gold-l: #B8760A;
+  --color-gold-v: #C8860A;
+  --color-em:     #0A7050;
+  --color-em-l:   #0E9068;
+  --color-ink:    #1C1A17;
+  --color-t2:     #625D57;
+  --color-t3:     #9C9590;
+}
+
+:root {
+  --bd:   rgba(28,26,23,0.08);
+  --bd-g: rgba(154,97,8,0.18);
+}
+
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #FAF9F7;
+  color: #1C1A17;
+  font-family: var(--font-dm), 'DM Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Grain texture overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ── Animations ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.75); }
+}
+
+@keyframes mq-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Gradient text ── */
+.grad-text {
+  background: linear-gradient(100deg, #C8860A 0%, #0E9068 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Pulse dot ── */
+.pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #9A6108;
+  border-radius: 50%;
+  animation: pulse 2.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Marquee track ── */
+.mq-inner {
+  display: inline-flex;
+  align-items: center;
+  animation: mq-scroll 24s linear infinite;
+  white-space: nowrap;
+}
+.mq-inner:hover { animation-play-state: paused; }
+
+/* ── Phone mockup hero dot grid ── */
+.hero-dot-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(154,97,8,.14) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* ── Hero glow blobs ── */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 700px 500px at 65% 30%, rgba(154,97,8,.07), transparent 70%),
+    radial-gradient(ellipse 500px 400px at 25% 70%, rgba(10,112,80,.05), transparent 70%);
+}
+
+/* ── CTA glow ── */
+.cta-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 700px 500px at 50% 50%, rgba(154,97,8,.08), transparent 65%),
+    radial-gradient(ellipse 400px 300px at 70% 30%, rgba(10,112,80,.05), transparent 65%);
+}
+
+/* ── How it works connecting line ── */
+.how-line {
+  position: absolute;
+  top: 27px;
+  left: calc(16.66% + 27px);
+  right: calc(16.66% + 27px);
+  height: 1px;
+  background: linear-gradient(90deg, #9A6108, #0A7050);
+  opacity: 0.4;
+  pointer-events: none;
+}
