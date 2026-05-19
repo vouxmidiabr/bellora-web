@@ -1,9 +1,11 @@
 "use client";
 
 import { useLang } from "@/context/LanguageContext";
+import { useDemoModal } from "@/context/DemoModalContext";
 
 export function CTA() {
   const { t } = useLang();
+  const { openModal } = useDemoModal();
 
   return (
     <section
@@ -58,8 +60,8 @@ export function CTA() {
           {t.ctaSub}
         </p>
 
-        <a
-          href="mailto:hello@bellora.io"
+        <button
+          onClick={openModal}
           className="reveal d2"
           style={{
             display: "inline-flex",
@@ -74,7 +76,6 @@ export function CTA() {
             fontWeight: 600,
             fontSize: 14.5,
             cursor: "pointer",
-            textDecoration: "none",
             transition: "all .22s ease",
           }}
           onMouseEnter={e => {
@@ -91,7 +92,7 @@ export function CTA() {
           }}
         >
           {t.ctaBtn}
-        </a>
+        </button>
 
         <p
           className="reveal d3"

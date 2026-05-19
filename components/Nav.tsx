@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLang } from "@/context/LanguageContext";
+import { useDemoModal } from "@/context/DemoModalContext";
 import { Language } from "@/lib/translations";
 
 function BellLogo({ dark }: { dark?: boolean }) {
@@ -18,6 +19,7 @@ function BellLogo({ dark }: { dark?: boolean }) {
 
 export function Nav() {
   const { lang, t, setLang } = useLang();
+  const { openModal } = useDemoModal();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -99,8 +101,8 @@ export function Nav() {
               </span>
             ))}
           </div>
-          <a
-            href="#cta"
+          <button
+            onClick={openModal}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -112,15 +114,15 @@ export function Nav() {
               fontFamily: "var(--font-dm), DM Sans, sans-serif",
               fontWeight: 600,
               fontSize: 12.5,
-              textDecoration: "none",
               whiteSpace: "nowrap",
               transition: "all 0.22s ease",
+              cursor: "pointer",
             }}
             onMouseEnter={e => { const el = e.currentTarget; el.style.background = "#9A6108"; el.style.color = "#fff"; el.style.borderColor = "#9A6108"; }}
             onMouseLeave={e => { const el = e.currentTarget; el.style.background = "transparent"; el.style.color = "#9A6108"; el.style.borderColor = "rgba(154,97,8,.3)"; }}
           >
             {t.navCta}
-          </a>
+          </button>
         </div>
       </div>
 

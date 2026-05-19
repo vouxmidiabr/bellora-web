@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "@/context/LanguageContext";
+import { useDemoModal } from "@/context/DemoModalContext";
 
 function Check() {
   return (
@@ -10,6 +11,7 @@ function Check() {
 
 export function Pricing() {
   const { t } = useLang();
+  const { openModal } = useDemoModal();
 
   return (
     <section id="pricing" style={{ padding: "120px 0", background: "#F2EFE9" }}>
@@ -81,8 +83,8 @@ export function Pricing() {
               <p style={{ fontSize: 14, fontWeight: 300, color: "#625D57", lineHeight: 1.7, margin: "0 0 32px", fontFamily: "var(--font-dm), DM Sans, sans-serif" }}>
                 {t.priceCtaDesc}
               </p>
-              <a
-                href="#cta"
+              <button
+                onClick={openModal}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -96,7 +98,6 @@ export function Pricing() {
                   fontWeight: 600,
                   fontSize: 14,
                   cursor: "pointer",
-                  textDecoration: "none",
                   transition: "all .22s ease",
                   alignSelf: "flex-start",
                 }}
@@ -112,7 +113,7 @@ export function Pricing() {
                 }}
               >
                 {t.priceDemoBtn}
-              </a>
+              </button>
             </div>
           </div>
         </div>

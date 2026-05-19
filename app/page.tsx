@@ -1,4 +1,6 @@
 import { LanguageProvider } from "@/context/LanguageContext";
+import { DemoModalProvider } from "@/context/DemoModalContext";
+import { DemoModal } from "@/components/DemoModal";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
@@ -13,18 +15,21 @@ import { Footer } from "@/components/Footer";
 export default function Page() {
   return (
     <LanguageProvider>
-      <ScrollReveal />
-      <Nav />
-      <main>
-        <Hero />
-        <Marquee />
-        <Features />
-        <Platform />
-        <HowItWorks />
-        <Pricing />
-        <CTA />
-      </main>
-      <Footer />
+      <DemoModalProvider>
+        <DemoModal />
+        <ScrollReveal />
+        <Nav />
+        <main>
+          <Hero />
+          <Marquee />
+          <Features />
+          <Platform />
+          <HowItWorks />
+          <Pricing />
+          <CTA />
+        </main>
+        <Footer />
+      </DemoModalProvider>
     </LanguageProvider>
   );
 }

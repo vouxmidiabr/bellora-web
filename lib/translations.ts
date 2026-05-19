@@ -64,6 +64,20 @@ export interface Translations {
   ctaSub: string;
   ctaBtn: string;
   ctaFn: string;
+  demoTitle: string;
+  demoSub: string;
+  demoName: string;
+  demoHotel: string;
+  demoEmail: string;
+  demoPhone: string;
+  demoRooms: string;
+  demoRoomsPlaceholder: string;
+  demoSubmit: string;
+  demoSending: string;
+  demoSuccessTitle: string;
+  demoSuccessSub: string;
+  demoClose: string;
+  demoError: string;
   footDesc: string;
   footCopy: string;
   footCol1: string; footCol2: string; footCol3: string;
@@ -116,6 +130,7 @@ export const translations: Record<Language, Translations> = {
     ctaH: "Ready to transform your<br><span class=\"grad-text\">guest experience?</span>",
     ctaSub: "Book a 30-minute demo. We'll show you Bellora live and configure it for your hotel, on the same day.",
     ctaBtn: "Book Your Demo →", ctaFn: "No commitment required · Free setup included",
+    demoTitle: "Book a Demo", demoSub: "30 minutes. Live walkthrough. Personalised proposal on the same day.", demoName: "Your name", demoHotel: "Hotel name", demoEmail: "Email", demoPhone: "Phone (optional)", demoRooms: "Number of rooms", demoRoomsPlaceholder: "Select a range", demoSubmit: "Book my demo →", demoSending: "Sending...", demoSuccessTitle: "We'll be in touch!", demoSuccessSub: "We received your request and will contact you within one business day to confirm the demo.", demoClose: "Close", demoError: "Something went wrong. Please try again.",
     footDesc: "Guest experience platform for modern hotels. Built in Portugal.",
     footCopy: "© 2025 Bellora. All rights reserved.",
     footCol1: "Product", footCol2: "Company", footCol3: "Get Started",
@@ -164,6 +179,7 @@ export const translations: Record<Language, Translations> = {
     ctaH: "Pronto para transformar a<br><span class=\"grad-text\">experiência do hóspede?</span>",
     ctaSub: "Marque uma demo de 30 minutos. Mostramos o Bellora ao vivo e configuramos tudo para o seu hotel, no mesmo dia.",
     ctaBtn: "Marcar a Sua Demo →", ctaFn: "Sem compromisso · Configuração gratuita incluída",
+    demoTitle: "Marcar uma Demo", demoSub: "30 minutos. Demo ao vivo. Proposta personalizada no mesmo dia.", demoName: "O seu nome", demoHotel: "Nome do hotel", demoEmail: "Email", demoPhone: "Telefone (opcional)", demoRooms: "Número de quartos", demoRoomsPlaceholder: "Selecione um intervalo", demoSubmit: "Marcar a minha demo →", demoSending: "A enviar...", demoSuccessTitle: "Entraremos em contacto!", demoSuccessSub: "Recebemos o seu pedido e iremos contactá-lo num dia útil para confirmar a demo.", demoClose: "Fechar", demoError: "Algo correu mal. Por favor tente novamente.",
     footDesc: "Plataforma de experiência do hóspede para hotéis modernos. Criada em Portugal.",
     footCopy: "© 2025 Bellora. Todos os direitos reservados.",
     footCol1: "Produto", footCol2: "Empresa", footCol3: "Começar",
@@ -212,6 +228,7 @@ export const translations: Record<Language, Translations> = {
     ctaH: "¿Listo para transformar la<br><span class=\"grad-text\">experiencia del huésped?</span>",
     ctaSub: "Reserve una demo de 30 minutos. Le mostramos Bellora en directo y lo configuramos para su hotel, el mismo día.",
     ctaBtn: "Reservar Su Demo →", ctaFn: "Sin compromiso · Configuración gratuita incluida",
+    demoTitle: "Reservar una Demo", demoSub: "30 minutos. Demo en directo. Propuesta personalizada el mismo día.", demoName: "Su nombre", demoHotel: "Nombre del hotel", demoEmail: "Email", demoPhone: "Teléfono (opcional)", demoRooms: "Número de habitaciones", demoRoomsPlaceholder: "Seleccione un rango", demoSubmit: "Reservar mi demo →", demoSending: "Enviando...", demoSuccessTitle: "Nos pondremos en contacto!", demoSuccessSub: "Hemos recibido su solicitud y le contactaremos en un día hábil para confirmar la demo.", demoClose: "Cerrar", demoError: "Algo salió mal. Por favor, inténtelo de nuevo.",
     footDesc: "Plataforma de experiencia del huésped para hoteles modernos. Creada en Portugal.",
     footCopy: "© 2025 Bellora. Todos los derechos reservados.",
     footCol1: "Producto", footCol2: "Empresa", footCol3: "Empezar",
