@@ -123,7 +123,7 @@ export const translations: Record<Language, Translations> = {
     priceLabel: "Pricing", priceHead: "Simple and transparent.", priceSub: "One plan, fully adapted to your hotel. No hidden fees.",
     priceFrom: "From", priceMo: "€199/mo",
     priceAdapted: "Tailored to your hotel's size · Enterprise pricing available",
-    priceF1: "Free setup", priceF2: "First month free", priceF3: "No lock-in contract", priceF4: "Up and running in an afternoon",
+    priceF1: "Free setup", priceF2: "First month free", priceF3: "No lock-in contract", priceF4: "Support included",
     priceCtaQ: "Want to know the exact price for your hotel?",
     priceCtaDesc: "Book a 30-minute demo. We'll show you Bellora live and send you a personalised proposal the same day.",
     priceDemoBtn: "Book a demo",
