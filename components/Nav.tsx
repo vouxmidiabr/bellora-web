@@ -76,7 +76,7 @@ export function Nav() {
         </ul>
 
         {/* Right: lang + CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+        <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <div className="nav-lang" style={{ display: "flex", alignItems: "center", gap: 6 }}>
             {(["EN", "PT", "ES"] as Language[]).map((l, i) => (
               <span key={l} style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -103,6 +103,7 @@ export function Nav() {
           </div>
           <button
             onClick={openModal}
+            className="nav-cta-btn"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -131,7 +132,8 @@ export function Nav() {
           .nav-links-list { display: none !important; }
         }
         @media (max-width: 480px) {
-          .nav-lang { display: none !important; }
+          .nav-right { gap: 12px !important; }
+          .nav-cta-btn { padding: 8px 12px !important; font-size: 11.5px !important; }
         }
       `}</style>
     </nav>
