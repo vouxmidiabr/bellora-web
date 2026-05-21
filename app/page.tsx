@@ -4,7 +4,6 @@ import { DemoModal } from "@/components/DemoModal";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
 import { Features } from "@/components/Features";
 import { Platform } from "@/components/Platform";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -21,7 +20,6 @@ export default function Page() {
         <Nav />
         <main>
           <Hero />
-          <Marquee />
           <Features />
           <Platform />
           <HowItWorks />
